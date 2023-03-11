@@ -4,6 +4,8 @@
 #include <vector>
 #include "Shape.h"
 
-std::vector<Shape*> *readFrom(std::string);
+using namespace std;
+
+vector<Shape*> *readFrom(string);
 
 #endif
