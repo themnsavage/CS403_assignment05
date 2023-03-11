@@ -2,6 +2,12 @@ using namespace std;
 
 #include "Sphere.h";
 
+//constructor
+Sphere::Sphere(string& name, double radius)
+    :Shape(name)
+{
+    this->radius = radius;
+}
 // get the surface area
 double Sphere::getArea() const{}           
 // get the volume
