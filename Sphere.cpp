@@ -79,4 +79,8 @@ bool Sphere::test(const vector<string>& cond) const{
     return true;
 }
 // get all the info in a string
-string Sphere::getInfo() const{}
+string Sphere::getInfo() const{
+    string dimension = "Sphere: "+this->getName()+", Radius="+to_string(this->radius);
+    string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
+    return dimension+"\n"+caculations;
+}
