@@ -9,7 +9,7 @@ Sphere::Sphere(string& name, double radius)
     this->radius = radius;
 }
 // helper function
-bool Sphere::isConditionStatementTrue(string name, string op, string value) const{
+bool Sphere::isConditionStatementTrue(string name, string op, string value){
     //convert name and value to correct values
     double leftStatement;
     double rightStatement;
@@ -47,15 +47,15 @@ bool Sphere::isConditionStatementTrue(string name, string op, string value) cons
     return false;
 }
 // get the surface area
-double Sphere::getArea() const{
+double Sphere::getArea(){
     return 4*PI*(this->radius*this->radius);
 }
 // get the volume
-double Sphere::getVolume() const{
+double Sphere::getVolume(){
     return (4/3)*PI*(this->radius*this->radius*this->radius);
 }
 // test if the conditions are statisfied
-bool Sphere::test(const vector<string>& cond) const{
+bool Sphere::test(const vector<string>& cond){
     string name, op, value;
     int count = 0;
     for(int index = 0; index < cond.size(); index++){
@@ -79,7 +79,7 @@ bool Sphere::test(const vector<string>& cond) const{
     return true;
 }
 // get all the info in a string
-string Sphere::getInfo() const{
+string Sphere::getInfo(){
     string dimension = "Sphere: "+this->getName()+", Radius="+to_string(this->radius);
     string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
     return dimension+"\n"+caculations;
