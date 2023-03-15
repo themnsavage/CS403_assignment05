@@ -7,3 +7,6 @@ compile:
 
 run: 
 	./a.out shapes.dat
+
+clean:
+	rm a.out
