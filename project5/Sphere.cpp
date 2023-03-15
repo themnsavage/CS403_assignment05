@@ -1,10 +1,9 @@
 using namespace std;
-
-#include "Sphere.h";
+#include "Sphere.h"
 
 //constructor
-Sphere::Sphere(string& name, double radius)
-    :Shape(name)
+Sphere::Sphere(string name, double radius)
+    : Shape(name)
 {
     this->radius = radius;
 }
@@ -58,7 +57,7 @@ double Sphere::getVolume(){
 bool Sphere::test(const vector<string>& cond){
     string name, op, value;
     int count = 0;
-    for(int index = 0; index < cond.size(); index++){
+    for(size_t index = 0; index < cond.size(); index++){
         if(count == 0){// get name
             name = cond[index];
             count++;

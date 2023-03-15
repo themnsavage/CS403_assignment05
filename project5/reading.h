@@ -1,10 +1,7 @@
 #ifndef _READING_H_
 #define _READING_H_
 
-#include <vector>
-#include <iostream>
 #include <fstream>
-#include <string>
 #include <bits/stdc++.h>
 #include "Shape.h"
 #include "Sphere.h"

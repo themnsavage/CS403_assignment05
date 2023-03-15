@@ -1,6 +1,6 @@
 using namespace std;
 
-#include "Box.h";
+#include "Box.h"
 
 //constructor
 Box::Box(string& name, double l, double w, double h)
@@ -11,7 +11,7 @@ Box::Box(string& name, double l, double w, double h)
     this->height = h;
 };
 //helper function
-bool Box::isConditionStatementTrue(string name, string op, string value) const{
+bool Box::isConditionStatementTrue(string name, string op, string value){
     //convert name and value to correct values
     double leftStatement;
     double rightStatement;
@@ -49,18 +49,18 @@ bool Box::isConditionStatementTrue(string name, string op, string value) const{
     return false;
 }
 // get the surface area
-double Box::getArea() const{
+double Box::getArea(){
     return 2 * (this->length*this->width + this->length*this->height + this->width*this->height);
 }
 // get the volume
-double Box::getVolume() const{
+double Box::getVolume(){
     return this->length*this->height*this->width;
 }
 // test if the conditions are statisfied
-bool Box::test(const vector<string>& cond) const{
+bool Box::test(const vector<string>& cond){
     string name, op, value;
     int count = 0;
-    for(int index = 0; index < cond.size(); index++){
+    for(size_t index = 0; index < cond.size(); index++){
         if(count == 0){// get name
             name = cond[index];
             count++;
@@ -81,7 +81,7 @@ bool Box::test(const vector<string>& cond) const{
     return true;
 }
 // get all the info in a string
-string Box::getInfo() const{
+string Box::getInfo(){
     string dimension = "Box: "+this->getName()+", Length="+to_string(this->length)+", Width="+to_string(this->width)+", Height="+to_string(this->height);
     string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
     return dimension+"\n"+caculations;

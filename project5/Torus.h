@@ -1,13 +1,18 @@
+#ifndef _Torus_H_
+#define _Torus_H_
+
 #include "Shape.h"
 using namespace std;
 
 class Torus: public Shape{
-    Torus(string& name, double radius1, double radius2);
-    double getArea() const = 0; // get the surface area          
-    double getVolume() const = 0; // get the volume          
-    bool test(const vector<string>& cond) const = 0; // test if the conditions are statisfied
-    string getInfo() const = 0; // get all the info in a string
-    virtual bool isConditionStatementTrue(string name, string op, string value) const = 0;
+    public:
+        Torus(string name, double radius1, double radius2);
+        double getArea(); // get the surface area          
+        double getVolume(); // get the volume          
+        bool test(const vector<string>& cond); // test if the conditions are statisfied
+        string getInfo(); // get all the info in a string
+        bool isConditionStatementTrue(string name, string op, string value);
     private:
         double bigRadius, smallRadius;
 };
+#endif

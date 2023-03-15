@@ -1,9 +1,8 @@
 using namespace std;
 
-#include "Torus.h";
-#include <string.h>
+#include "Torus.h"
 //constructor
-Torus::Torus(string& name, double radius1, double radius2)
+Torus::Torus(string name, double radius1, double radius2)
     :Shape(name)
 {
     if(radius1 < radius2){
@@ -16,7 +15,7 @@ Torus::Torus(string& name, double radius1, double radius2)
     }
 }
 //helper function
-bool Torus::isConditionStatementTrue(string name, string op, string value) const{
+bool Torus::isConditionStatementTrue(string name, string op, string value){
     //convert name and value to correct values
     double leftStatement;
     double rightStatement;
@@ -55,18 +54,18 @@ bool Torus::isConditionStatementTrue(string name, string op, string value) const
 }
 
 // get the surface area
-double Torus::getArea() const{
+double Torus::getArea(){
     return (4*PI*this->smallRadius)*(4*PI*this->bigRadius);
 }
 // get the volume
-double Torus::getVolume() const{
+double Torus::getVolume(){
     return (PI*(this->smallRadius*this->smallRadius))*(2*PI*this->bigRadius);
 }
 // test if the conditions are statisfied
-bool Torus::test(const vector<string>& cond) const{
+bool Torus::test(const vector<string>& cond){
     string name, op, value;
     int count = 0;
-    for(int index = 0; index < cond.size(); index++){
+    for(size_t index = 0; index < cond.size(); index++){
         if(count == 0){// get name
             name = cond[index];
             count++;
@@ -87,7 +86,7 @@ bool Torus::test(const vector<string>& cond) const{
     return true;
 }
 // get all the info in a string
-string Torus::getInfo() const{
+string Torus::getInfo(){
     string dimension = "Torus: "+this->getName()+", Small Radius="+to_string(this->smallRadius)+", Big Radius="+to_string(this->bigRadius);
     string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
     return dimension+"\n"+caculations;

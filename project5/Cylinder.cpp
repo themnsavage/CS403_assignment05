@@ -1,15 +1,16 @@
 using namespace std;
 
-#include "Cylinder.h";
+#include "Cylinder.h"
+
 //constructor
-Cylinder::Cylinder(string& name, double radius, double height)
+Cylinder::Cylinder(string name, double radius, double height)
     :Shape(name)
 {
     this->radius = radius;
     this->height = height;
 }
 //helper function
-bool Cylinder::isConditionStatementTrue(string name, string op, string value) const{
+bool Cylinder::isConditionStatementTrue(string name, string op, string value){
     //convert name and value to correct values
     double leftStatement;
     double rightStatement;
@@ -47,18 +48,18 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value) co
     return false;
 }
 // get the surface area
-double Cylinder::getArea() const{
+double Cylinder::getArea(){
     return 2*PI * this->radius*this->height + 2*PI * (this->radius * this->radius);
 }
 // get the volume
-double Cylinder::getVolume() const{
+double Cylinder::getVolume(){
     return PI * (this->radius*this->radius) * this->height;
 }
 // test if the conditions are statisfied
-bool Cylinder::test(const vector<string>& cond) const{
+bool Cylinder::test(const vector<string>& cond){
     string name, op, value;
     int count = 0;
-    for(int index = 0; index < cond.size(); index++){
+    for(size_t index = 0; index < cond.size(); index++){
         if(count == 0){// get name
             name = cond[index];
             count++;
@@ -79,7 +80,7 @@ bool Cylinder::test(const vector<string>& cond) const{
     return true;
 }
 // get all the info in a string
-string Cylinder::getInfo() const{
+string Cylinder::getInfo(){
     string dimension = "Cylinder: "+this->getName()+", Radius="+to_string(this->radius)+", Height="+to_string(this->height);
     string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
     return dimension+"\n"+caculations;
