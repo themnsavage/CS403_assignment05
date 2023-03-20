@@ -51,11 +51,13 @@ bool Box::isConditionStatementTrue(string name, string op, string value) const{
 }
 // get the surface area
 double Box::getArea() const{
-    return 2 * (this->length*this->width + this->length*this->height + this->width*this->height);
+    double area = 2 * (this->length*this->width + this->length*this->height + this->width*this->height);
+    return ceil(area * 100.0) / 100.0;
 }
 // get the volume
 double Box::getVolume() const{
-    return this->length*this->height*this->width;
+    double volume = this->length*this->height*this->width;
+    return ceil(volume * 100.0) / 100.0;
 }
 // test if the conditions are statisfied
 bool Box::test(const vector<string>& cond) const{

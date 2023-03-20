@@ -2,6 +2,7 @@
 #define _Torus_H_
 
 #include "Shape.h"
+#include <cmath>
 using namespace std;
 
 class Torus: public Shape{

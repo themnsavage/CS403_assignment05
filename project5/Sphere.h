@@ -2,6 +2,7 @@
 #define _Sphere_H_
 
 #include "Shape.h"
+#include <cmath>
 using namespace std;
 
 class Sphere: public Shape{

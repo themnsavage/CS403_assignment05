@@ -2,6 +2,7 @@
 #define _Box_H_
 
 #include "Shape.h"
+#include <cmath>
 using namespace std;
 
 class Box: public Shape{

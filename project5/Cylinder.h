@@ -2,6 +2,7 @@
 #define _Cylinder_H_
 
 #include "Shape.h"
+#include <cmath>
 using namespace std;
 
 class Cylinder: public Shape{

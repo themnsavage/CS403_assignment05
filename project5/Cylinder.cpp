@@ -25,7 +25,6 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value) co
     else{
         leftStatement = this->type.compare(value);
         rightStatement = 0;
-        
     }
     // condition statement
     if(op.compare("==") == 0){
@@ -51,11 +50,13 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value) co
 }
 // get the surface area
 double Cylinder::getArea() const{
-    return 2*PI * this->radius*this->height + 2*PI * (this->radius * this->radius);
+    double area = 2*PI * this->radius*this->height + 2*PI * (this->radius * this->radius);
+    return ceil(area * 100.0) / 100.0;
 }
 // get the volume
 double Cylinder::getVolume() const{
-    return PI * (this->radius*this->radius) * this->height;
+    double volume = PI * (this->radius*this->radius) * this->height;
+    return ceil(volume * 100.0) / 100.0;
 }
 // test if the conditions are statisfied
 bool Cylinder::test(const vector<string>& cond) const{
