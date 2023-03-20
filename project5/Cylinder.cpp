@@ -10,7 +10,7 @@ Cylinder::Cylinder(string name, double radius, double height)
     this->height = height;
 }
 //helper function
-bool Cylinder::isConditionStatementTrue(string name, string op, string value){
+bool Cylinder::isConditionStatementTrue(string name, string op, string value) const{
     //convert name and value to correct values
     double leftStatement;
     double rightStatement;
@@ -48,15 +48,15 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value){
     return false;
 }
 // get the surface area
-double Cylinder::getArea(){
+double Cylinder::getArea() const{
     return 2*PI * this->radius*this->height + 2*PI * (this->radius * this->radius);
 }
 // get the volume
-double Cylinder::getVolume(){
+double Cylinder::getVolume() const{
     return PI * (this->radius*this->radius) * this->height;
 }
 // test if the conditions are statisfied
-bool Cylinder::test(const vector<string>& cond){
+bool Cylinder::test(const vector<string>& cond) const{
     string name, op, value;
     int count = 0;
     for(size_t index = 0; index < cond.size(); index++){
@@ -80,7 +80,7 @@ bool Cylinder::test(const vector<string>& cond){
     return true;
 }
 // get all the info in a string
-string Cylinder::getInfo(){
+string Cylinder::getInfo() const{
     string dimension = "Cylinder: "+this->getName()+", Radius="+to_string(this->radius)+", Height="+to_string(this->height);
     string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
     return dimension+"\n"+caculations;
