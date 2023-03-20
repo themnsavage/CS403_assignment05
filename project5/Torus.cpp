@@ -90,7 +90,13 @@ bool Torus::test(const vector<string>& cond) const{
 }
 // get all the info in a string
 string Torus::getInfo() const{
-    string dimension = "Torus: "+this->getName()+", Small Radius="+to_string(this->smallRadius)+", Big Radius="+to_string(this->bigRadius);
-    string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
+    stringstream ssSmallRadius, ssBigRadius, ssArea, ssVolume;
+    ssSmallRadius<<fixed<<setprecision(2)<<this->smallRadius;
+    ssBigRadius<<fixed<<setprecision(2)<<this->bigRadius;
+    ssArea<<fixed<<setprecision(2)<<this->getArea();
+    ssVolume<<fixed<<setprecision(2)<<this->getVolume();
+
+    string dimension = "Torus: "+this->getName()+", Small Radius="+ssSmallRadius.str()+", Big Radius="+ssBigRadius.str();
+    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
     return dimension+"\n"+caculations;
 }

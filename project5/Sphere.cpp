@@ -82,7 +82,12 @@ bool Sphere::test(const vector<string>& cond) const{
 }
 // get all the info in a string
 string Sphere::getInfo() const{
-    string dimension = "Sphere: "+this->getName()+", Radius="+to_string(this->radius);
-    string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
+    stringstream ssRadius, ssArea, ssVolume;
+    ssRadius<<fixed<<setprecision(2)<<this->radius;
+    ssArea<<fixed<<setprecision(2)<<this->getArea();
+    ssVolume<<fixed<<setprecision(2)<<this->getVolume();
+    
+    string dimension = "Sphere: "+this->getName()+", Radius="+ssRadius.str();
+    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
     return dimension+"\n"+caculations;
 }

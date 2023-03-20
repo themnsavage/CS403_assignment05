@@ -84,7 +84,13 @@ bool Cylinder::test(const vector<string>& cond) const{
 }
 // get all the info in a string
 string Cylinder::getInfo() const{
-    string dimension = "Cylinder: "+this->getName()+", Radius="+to_string(this->radius)+", Height="+to_string(this->height);
-    string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
+    stringstream ssRadius, ssHeight, ssArea, ssVolume;
+    ssRadius<<fixed<<setprecision(2)<<this->radius;
+    ssHeight<<fixed<<setprecision(2)<<this->height;
+    ssArea<<fixed<<setprecision(2)<<this->getArea();
+    ssVolume<<fixed<<setprecision(2)<<this->getVolume();
+
+    string dimension = "Cylinder: "+this->getName()+", Radius="+ssRadius.str()+", Height="+ssHeight.str();
+    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
     return dimension+"\n"+caculations;
 }

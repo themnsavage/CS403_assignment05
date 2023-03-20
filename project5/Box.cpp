@@ -85,7 +85,14 @@ bool Box::test(const vector<string>& cond) const{
 }
 // get all the info in a string
 string Box::getInfo() const{
-    string dimension = "Box: "+this->getName()+", Length="+to_string(this->length)+", Width="+to_string(this->width)+", Height="+to_string(this->height);
-    string caculations = "         Surface Area: "+to_string(this->getArea())+ ", Volume: "+to_string(this->getVolume());
+    stringstream ssLength, ssWidth, ssHeight, ssArea, ssVolume;
+    ssLength<<fixed<<setprecision(2)<<this->length;
+    ssWidth<<fixed<<setprecision(2)<<this->width;
+    ssHeight<<fixed<<setprecision(2)<<this->height;
+    ssArea<<fixed<<setprecision(2)<<this->getArea();
+    ssVolume<<fixed<<setprecision(2)<<this->getVolume();
+
+    string dimension = "Box: "+this->getName()+", Length="+ssLength.str()+", Width="+ssWidth.str()+", Height="+ssHeight.str();
+    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
     return dimension+"\n"+caculations;
 }

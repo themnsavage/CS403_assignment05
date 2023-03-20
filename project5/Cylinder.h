@@ -3,6 +3,8 @@
 
 #include "Shape.h"
 #include <cmath>
+#include <iomanip>
+#include <sstream>
 using namespace std;
 
 class Cylinder: public Shape{
