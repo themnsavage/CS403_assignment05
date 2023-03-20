@@ -51,7 +51,7 @@ bool Box::isConditionStatementTrue(string name, string op, string value) const{
 }
 // get the surface area
 double Box::getArea() const{
-    double area = 2 * (this->length*this->width + this->length*this->height + this->width*this->height);
+    double area = 2.0 * (this->length*this->width + this->length*this->height + this->width*this->height);
     return ceil(area * 100.0) / 100.0;
 }
 // get the volume

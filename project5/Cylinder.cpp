@@ -50,7 +50,7 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value) co
 }
 // get the surface area
 double Cylinder::getArea() const{
-    double area = 2*PI * this->radius*this->height + 2*PI * (this->radius * this->radius);
+    double area = 2.0*PI * this->radius*this->height + 2.0*PI * (this->radius * this->radius);
     return ceil(area * 100.0) / 100.0;
 }
 // get the volume
