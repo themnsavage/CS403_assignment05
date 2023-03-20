@@ -14,5 +14,6 @@ class Torus: public Shape{
         virtual bool isConditionStatementTrue(string name, string op, string value) const;
     private:
         double bigRadius, smallRadius;
+        string type = "torus";
 };
 #endif

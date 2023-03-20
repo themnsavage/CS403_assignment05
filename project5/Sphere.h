@@ -15,6 +15,7 @@ class Sphere: public Shape{
         virtual bool isConditionStatementTrue(string name, string op, string value) const;
     private:
         double radius;
+        string type = "sphere";
 };
 
 #endif

@@ -28,7 +28,8 @@ bool Torus::isConditionStatementTrue(string name, string op, string value) const
         rightStatement = stod(value);
     }
     else{
-        return false; // need to find the hiearchy for shape values
+        leftStatement = this->type.compare(value);
+        rightStatement = 0;
     }
     // condition statement
     if(op.compare("==") == 0){

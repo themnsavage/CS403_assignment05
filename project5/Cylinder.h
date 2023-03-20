@@ -13,6 +13,7 @@ class Cylinder: public Shape{
         string getInfo() const; // get all the info in a string
         virtual bool isConditionStatementTrue(string name, string op, string value) const;
     private:
-        double radius, height;    
+        double radius, height;
+        string type = "cylinder";    
 };
 #endif

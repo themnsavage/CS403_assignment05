@@ -14,5 +14,6 @@ class Box: public Shape{
         virtual bool isConditionStatementTrue(string name, string op, string value)const;
     private:
         double length, width, height;
+        string type = "box";
 };
 #endif
