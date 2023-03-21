@@ -64,7 +64,7 @@ double Torus::getVolume() const{
     double volume =  (PI*(this->smallRadius*this->smallRadius))*(2.0*PI*this->bigRadius);
     return round(volume * 100.0) / 100.0;
 }
-// test if the conditions are statisfied
+// test if the conditions are satisfied
 bool Torus::test(const vector<string>& cond) const{
     string name, op, value;
     int count = 0;
@@ -97,6 +97,6 @@ string Torus::getInfo() const{
     ssVolume<<fixed<<setprecision(2)<<this->getVolume();
 
     string dimension = "Torus: "+this->getName()+", Small Radius="+ssSmallRadius.str()+", Big Radius="+ssBigRadius.str();
-    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
-    return dimension+"\n"+caculations;
+    string calculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
+    return dimension+"\n"+calculations;
 }

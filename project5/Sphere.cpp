@@ -56,7 +56,7 @@ double Sphere::getVolume() const{
     double volume = (4.0/3.0)*PI*(this->radius*this->radius*this->radius);
     return round(volume * 100.0) / 100.0;
 }
-// test if the conditions are statisfied
+// test if the conditions are satisfied
 bool Sphere::test(const vector<string>& cond) const{
     string name, op, value;
     int count = 0;
@@ -88,6 +88,6 @@ string Sphere::getInfo() const{
     ssVolume<<fixed<<setprecision(2)<<this->getVolume();
     
     string dimension = "Sphere: "+this->getName()+", Radius="+ssRadius.str();
-    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
-    return dimension+"\n"+caculations;
+    string calculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
+    return dimension+"\n"+calculations;
 }

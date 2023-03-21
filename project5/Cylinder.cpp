@@ -58,7 +58,7 @@ double Cylinder::getVolume() const{
     double volume = PI * (this->radius*this->radius) * this->height;
     return round(volume * 100.0) / 100.0;
 }
-// test if the conditions are statisfied
+// test if the conditions are satisfied
 bool Cylinder::test(const vector<string>& cond) const{
     string name, op, value;
     int count = 0;
@@ -91,6 +91,6 @@ string Cylinder::getInfo() const{
     ssVolume<<fixed<<setprecision(2)<<this->getVolume();
 
     string dimension = "Cylinder: "+this->getName()+", Radius="+ssRadius.str()+", Height="+ssHeight.str();
-    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
-    return dimension+"\n"+caculations;
+    string calculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
+    return dimension+"\n"+calculations;
 }

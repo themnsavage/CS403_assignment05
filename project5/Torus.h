@@ -12,7 +12,7 @@ class Torus: public Shape{
         Torus(string name, double radius1, double radius2);
         double getArea() const; // get the surface area          
         double getVolume() const; // get the volume          
-        bool test(const vector<string>& cond) const; // test if the conditions are statisfied
+        bool test(const vector<string>& cond) const; // test if the conditions are satisfied
         string getInfo() const; // get all the info in a string
         virtual bool isConditionStatementTrue(string name, string op, string value) const;
     private:

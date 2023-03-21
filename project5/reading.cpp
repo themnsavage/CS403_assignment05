@@ -6,8 +6,8 @@ vector<Shape*> *readFrom(string fileName){
     ifstream ifs(fileName);
     string line;
     vector <Shape*> *shapes = new vector<Shape*>(0);
-    while(getline(ifs,line)){//grap each line from file
-        //create a vector with line seperated by spaces
+    while(getline(ifs,line)){//grab each line from file
+        //create a vector with line separate by spaces
         string word;
         stringstream lineStream(line);
         vector<string> listOfWords;

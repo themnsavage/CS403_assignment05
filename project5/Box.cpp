@@ -59,7 +59,7 @@ double Box::getVolume() const{
     double volume = this->length*this->height*this->width;
     return round(volume * 100.0) / 100.0;
 }
-// test if the conditions are statisfied
+// test if the conditions are satisfied
 bool Box::test(const vector<string>& cond) const{
     string name, op, value;
     int count = 0;
@@ -93,6 +93,6 @@ string Box::getInfo() const{
     ssVolume<<fixed<<setprecision(2)<<this->getVolume();
 
     string dimension = "Box: "+this->getName()+", Length="+ssLength.str()+", Width="+ssWidth.str()+", Height="+ssHeight.str();
-    string caculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
-    return dimension+"\n"+caculations;
+    string calculations = "         Surface Area: "+ssArea.str()+ ", Volume: "+ssVolume.str();
+    return dimension+"\n"+calculations;
 }
