@@ -57,12 +57,12 @@ bool Torus::isConditionStatementTrue(string name, string op, string value) const
 // get the surface area
 double Torus::getArea() const{
     double area = (2.0*PI*this->smallRadius)*(2.0*PI*this->bigRadius);
-    return ceil(area * 100.0) / 100.0;
+    return round(area * 100.0) / 100.0;
 }
 // get the volume
 double Torus::getVolume() const{
     double volume =  (PI*(this->smallRadius*this->smallRadius))*(2.0*PI*this->bigRadius);
-    return ceil(volume * 100.0) / 100.0;
+    return round(volume * 100.0) / 100.0;
 }
 // test if the conditions are statisfied
 bool Torus::test(const vector<string>& cond) const{

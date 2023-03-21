@@ -48,13 +48,13 @@ bool Sphere::isConditionStatementTrue(string name, string op, string value) cons
 }
 // get the surface area
 double Sphere::getArea() const{
-    double area = 4.0*PI*(this->radius*this->radius);
-    return ceil(area * 100.0) / 100.0;
+    double area = 4.*PI*(this->radius*this->radius);
+    return round(area * 100.0) / 100.0;
 }
 // get the volume
 double Sphere::getVolume() const{
     double volume = (4.0/3.0)*PI*(this->radius*this->radius*this->radius);
-    return ceil(volume * 100.0) / 100.0;
+    return round(volume * 100.0) / 100.0;
 }
 // test if the conditions are statisfied
 bool Sphere::test(const vector<string>& cond) const{

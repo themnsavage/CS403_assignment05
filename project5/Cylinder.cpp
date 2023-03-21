@@ -51,12 +51,12 @@ bool Cylinder::isConditionStatementTrue(string name, string op, string value) co
 // get the surface area
 double Cylinder::getArea() const{
     double area = 2.0*PI * this->radius*this->height + 2.0*PI * (this->radius * this->radius);
-    return ceil(area * 100.0) / 100.0;
+    return round(area * 100.0) / 100.0;
 }
 // get the volume
 double Cylinder::getVolume() const{
     double volume = PI * (this->radius*this->radius) * this->height;
-    return ceil(volume * 100.0) / 100.0;
+    return round(volume * 100.0) / 100.0;
 }
 // test if the conditions are statisfied
 bool Cylinder::test(const vector<string>& cond) const{
