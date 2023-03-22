@@ -6,5 +6,3 @@ program that read files with shape info and calculate the area and volume of sph
 ## How to run:
 1. have g++ downloaded(being able to compile c++ code)
 2. then run `make` (to clean run `make clean`)
-
-
